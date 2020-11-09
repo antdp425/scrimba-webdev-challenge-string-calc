@@ -5,13 +5,12 @@ html, body {
 }
 
 #main-container {
-   /* 
-       Vertically Stack 
-       & Horizontally Center contents
-   */
+   display: flex;
+   flex-direction: column;
 }
 
 #equation-field {
+   align-self: center;
    text-align: center;
    font-size: 2rem;
    background-color: wheat;
@@ -22,6 +21,7 @@ html, body {
 }
 
 #solve-button {
+   align-self: center;
    border: none;
    background-color: #4CAF50;
    font-size: 2rem;
@@ -38,6 +38,8 @@ html, body {
 
 #solution-display {
    display: flex;
+   justify-content: space-around;
+
 }
 
 #solution-display > .equation-component {
@@ -45,4 +47,5 @@ html, body {
    color: white;
    font-size: 2rem;
    padding: 0.1rem 1rem;
+   align-self: center;
 }

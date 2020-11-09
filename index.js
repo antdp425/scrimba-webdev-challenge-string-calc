@@ -13,10 +13,10 @@ solveButton.addEventListener("click", function() {
 function solve(num1, operator, num2){
     let n1 = parseInt(num1)
     let n2 = parseInt(num2)
-    return operator === "+" ? n1 + n2 :
-           operator === "-" ? n1 - n2 :
-           operator === "/" ? n1 / n2 :
-           operator === "*" ? n1 * n2 :
+    return operator === "+" ? `<div>${addition(n1,n2)}</div>`:
+           operator === "-" ? `<div>${subtaction(n1,n2)}</div>`:
+           operator === "/" ? `<div>${division(n1,n2)}</div>`:
+           operator === "*" ? `<div>${multiplication(n1,n2)}</div>`:
            "Sorry, I can't do that"
 }
 
@@ -25,6 +25,46 @@ function createEquationComponent(equation){
       <div class="equation-component">
          ${solve(...equation)}
       </div>
+   `
+}
+
+function addition (n1, n2){
+   return `
+      <span>${n1}</span>
+      <span>+</span>
+      <span>${n2}</span>
+      <span>=</span>
+      <span>${n1+n2}</span>
+   `
+}
+
+function subtaction (n1, n2){
+   return `
+      <span>${n1}</span>
+      <span>-</span>
+      <span>${n2}</span>
+      <span>=</span>
+      <span>${n1-n2}</span>
+   `
+}
+
+function multiplication (n1, n2){
+   return `
+      <span>${n1}</span>
+      <span>*</span>
+      <span>${n2}</span>
+      <span>=</span>
+      <span>${n1*n2}</span>
+   `
+}
+
+function divison (n1, n2){
+   return `
+      <span>${n1}</span>
+      <span>/</span>
+      <span>${n2}</span>
+      <span>=</span>
+      <span>${n1/n2}</span>
    `
 }
 
