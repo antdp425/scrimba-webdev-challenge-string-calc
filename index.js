@@ -6,9 +6,7 @@ const solutionDisplay = document.getElementById("solution-display")
 solveButton.addEventListener("click", function() {
     // Clears the solution contents on each click
     let equation = equationField.value.split(" ")
-    console.log(equation)
-    solutionDisplay.innerHTML = solve(...equation)
-    
+    solutionDisplay.innerHTML = createEquationComponent(equation)
     // Write your code here 👇
 })
 
@@ -20,6 +18,14 @@ function solve(num1, operator, num2){
            operator === "/" ? n1 / n2 :
            operator === "*" ? n1 * n2 :
            "Sorry, I can't do that"
+}
+
+function createEquationComponent(equation){
+   return `
+      <div class="equation-component">
+         ${solve(...equation)}
+      </div>
+   `
 }
 
 /*
